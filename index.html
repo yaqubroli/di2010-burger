@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DI2010 Burger</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .emoji {
+    font-size: 72pt;
+  }
+  
+  p {
+  	text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <p class="emoji">🍔🍟</p>
+  <p class="subtitle" id="comboName"></p>
+</div>
+
+<script>
+  const theologians = [
+  'Augustine of Hippo',
+  'Thomas Aquinas',
+  'Martin Luther',
+  'John Calvin',
+  'Karl Barth',
+  'Paul Tillich',
+  'Søren Kierkegaard',
+  'John Wesley',
+  'Dietrich Bonhoeffer',
+  'Jonathan Edwards',
+  'John Henry Newman',
+  'Hildegard of Bingen',
+  'Athanasius of Alexandria',
+  'Gregory of Nazianzus',
+  'John Chrysostom',
+  'Anselm of Canterbury',
+  'Thomas Merton',
+  'Albert Schweitzer',
+  'Alister McGrath',
+  'N.T. Wright',
+  'James Cone',
+  'Henri Nouwen',
+  'Rudolf Bultmann',
+  'Rowan Williams',
+  'Charles Spurgeon',
+  'Theresa of Avila',
+  'Catherine of Siena',
+  'Meister Eckhart',
+  'Pope John Paul II',
+  'R.C. Sproul',
+  'Clement of Alexandria',
+  'Pseudo-Dionysius the Areopagite',
+  'Francis of Assisi',
+  'Bonaventure',
+  'Desmond Tutu',
+  'Gustavo Gutiérrez',
+  'Karl Rahner',
+  'Jürgen Moltmann',
+  'Wolfhart Pannenberg',
+  'Reinhold Niebuhr',
+  'F.D.E. Schleiermacher',
+  'Emil Brunner',
+  'Hans Urs von Balthasar',
+  'Elizabeth Johnson',
+  'Rosemary Radford Ruether',
+  'Leonardo Boff',
+  'Joseph Ratzinger (Pope Benedict XVI)',
+  'Seraphim Rose',
+  'Gregory Palamas',
+  'Maximus the Confessor',
+  'Origen',
+  'Tertullian',
+  'Irenaeus of Lyons',
+  'John of Damascus',
+  'John Scotus Eriugena',
+  'John Owen',
+  'William Lane Craig',
+  'Alvin Plantinga',
+  'Cornelius Van Til',
+  'Georg Wilhelm Friedrich Hegel',
+  'Gottfried Wilhelm Leibniz',
+  'Arthur Schopenhauer',
+  'Friedrich Nietzsche',
+  'Plato',
+  'Aristotle',
+  'Immanuel Kant',
+  'Socrates',
+  'René Descartes',
+  'David Hume',
+  'John Stuart Mill',
+  'Thomas Hobbes',
+  'Jean-Paul Sartre',
+  'Simone de Beauvoir',
+  'Albert Camus',
+  'Sigmund Freud',
+  'Ludwig Wittgenstein',
+  'Bertrand Russell',
+  'Jean-Jacques Rousseau',
+  'Michel Foucault',
+  'Jacques Derrida',
+  'Edmund Husserl',
+  'Martin Heidegger',
+  'Franz Kafka',
+  'Baruch Spinoza',
+  'Julian of Norwich',
+  'Blaise Pascal',
+  'Simone Weil',
+  'G.W.F. Hegel',
+  'Friedrich Schleiermacher',
+  'Paul Ricoeur',
+  'Mircea Eliade',
+  'Alfred North Whitehead',
+  'Charles Hartshorne',
+  'John Duns Scotus',
+  'Thomas More',
+  'Erasmus of Rotterdam',
+  'Gilles Deleuze',
+  'Slavoj Žižek',
+  'Jacques Maritain',
+  'Gabriel Marcel',
+  'Karl Jaspers',
+  'Moses Maimonides',
+  'Avicenna (Ibn Sina)',
+  'Averroes (Ibn Rushd)',
+  'Plotinus',
+  'Epicurus',
+  'Zeno of Citium',
+  'Seneca the Younger',
+  'Hypatia of Alexandria',
+  'Quentin Pharr',
+  'Christina',
+  'Inés'
+];
+
+  function getRandomTheologianPair() {
+    const first = theologians[Math.floor(Math.random() * theologians.length)];
+    let second = theologians[Math.floor(Math.random() * theologians.length)];
+    // Ensure the second theologian is different
+    while (first === second) {
+      second = theologians[Math.floor(Math.random() * theologians.length)];
+    }
+    return { first, second };
+  }
+
+  function setComboName() {
+    const pair = getRandomTheologianPair();
+    document.getElementById('comboName').textContent = `${pair.first} burger with ${pair.second} fries`;
+  }
+
+  setComboName(); // Set the combo name on load
+</script>
+
+</body>
+</html>
+
